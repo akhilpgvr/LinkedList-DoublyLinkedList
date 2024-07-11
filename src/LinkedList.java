@@ -8,6 +8,7 @@ public class LinkedList {
         //insert if head is empty
         if(list.head == null) {
             list.head = new Node(data);
+            System.out.println("Added new node to head");
         }
         else{
 
@@ -16,6 +17,7 @@ public class LinkedList {
                 currentNode = currentNode.next;
             }
             currentNode.next = new Node(data);
+            System.out.println("Added new node to body");
         }
     }
 
@@ -29,6 +31,7 @@ public class LinkedList {
             Node new_node = new Node(data);
             new_node.next = head;
             head = new_node;
+            System.out.println("Added new node to head");
             return;
         }
         while(currentNode!=null && counter<=pos) {
@@ -37,6 +40,7 @@ public class LinkedList {
                 Node newNode = new Node(data);
                 newNode.next = currentNode;
                 previousNode.next = newNode;
+                System.out.println("Added new node to body");
                 return;
             }
             else{
