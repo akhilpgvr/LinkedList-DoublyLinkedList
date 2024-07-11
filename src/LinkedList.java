@@ -1,5 +1,6 @@
 public class LinkedList {
 
+    //head
     Node head;
 
     public void insertNode(LinkedList list, int data) {
@@ -18,7 +19,7 @@ public class LinkedList {
         }
     }
 
-    public void insertByPosition(LinkedList list, int data, int pos) throws Exception {
+    public void insertByPosition(int data, int pos) throws Exception {
 
         Node currentNode = head;
         Node previousNode  = head;
@@ -53,20 +54,54 @@ public class LinkedList {
         Node currentNode = list.head;
         if(list.head.data == key) {
             head = head.next;
+            System.out.println("Removed head");
         }else{
-            while(currentNode!=null && currentNode.data != key){
+            while(currentNode!=null && currentNode.data!=key){
                 previousNode = currentNode;
                 currentNode=currentNode.next;
+                System.out.println("Traversing through linkedList");
             }
-            if(currentNode!=null) {
+            if(currentNode != null) {
                 previousNode.next = currentNode.next;
+                System.out.println("Removed element");
                 return;
             }
             throw new Exception("Invalid key: "+ key);
         }
     }
 
-    public void deleteByPosition(int pos) {
+    public void deleteByPosition(int pos) throws Exception {
 
+
+        Node currentNode = head;
+        Node previousNode = head;
+        int counter = 1;
+
+        if(pos == 1) {
+
+            head = currentNode.next;
+            System.out.println("Removed head");
+        }
+        else {
+
+            while (currentNode!=null && counter<=pos) {
+
+                if(counter == pos){
+
+                    previousNode.next = currentNode.next;
+                    System.out.println("Removed element");
+                    return;
+                }
+                else {
+
+                    previousNode = currentNode;
+                    currentNode = currentNode.next;
+                    counter+=1;
+                    System.out.println("Traversing through linkedList");
+                }
+            }
+
+            throw new Exception("Invalid pos: "+ pos);
+        }
     }
 }

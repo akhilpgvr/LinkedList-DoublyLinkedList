@@ -11,11 +11,15 @@ public class Main {
         System.out.println(list);
 
         System.out.println("-----------Adding element at position------------");
-        list.insertByPosition(list, 32, 4);
+        list.insertByPosition(32, 4);
         System.out.println(list);
 
         System.out.println("-----------Deleting Node------------");
         list.deleteNodeByKey(list, 30);
+        System.out.println(list);
+
+        System.out.println("-----------Deleting Node by Pos------------");
+        list.deleteByPosition(6);
         System.out.println(list);
     }
 }
