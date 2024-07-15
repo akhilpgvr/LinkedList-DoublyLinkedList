@@ -1,25 +1,35 @@
 public class Main {
     public static void main(String[] args) throws Exception {
 
+        // Singly LinkedList
+        System.out.println(".......................................");
         System.out.println("-----------Adding elements------------");
-        LinkedList list = new LinkedList();
-        list.insertNode(list, 10);
-        list.insertNode(list, 20);
-        list.insertNode(list, 30);
-        list.insertNode(list, 40);
-        list.insertNode(list, 50);
-        System.out.println(list);
+        LinkedList sinList = new LinkedList();
+        sinList.insertNode(sinList, 10);
+        sinList.insertNode(sinList, 20);
+        sinList.insertNode(sinList, 30);
+        sinList.insertNode(sinList, 40);
+        sinList.insertNode(sinList, 50);
+        System.out.println(sinList);
 
         System.out.println("-----------Adding element at position------------");
-        list.insertByPosition(32, 4);
-        System.out.println(list);
+        sinList.insertByPosition(32, 4);
+        System.out.println(sinList);
 
         System.out.println("-----------Deleting Node------------");
-        list.deleteNodeByKey(list, 30);
-        System.out.println(list);
+        sinList.deleteNodeByKey(sinList, 30);
+        System.out.println(sinList);
 
         System.out.println("-----------Deleting Node by Pos------------");
-        list.deleteByPosition(6);
-        System.out.println(list);
+        sinList.deleteByPosition(6);
+        System.out.println(sinList);
+        System.out.println(".......................................");
+
+        //Doubly LinkedList
+        System.out.println(".......................................");
+        DoublyLinkedList doubList = new DoublyLinkedList();
+        doubList.addElement(12);
+        System.out.println(".......................................");
+
     }
 }
