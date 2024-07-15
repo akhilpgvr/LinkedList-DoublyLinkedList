@@ -21,7 +21,7 @@ public class Main {
         System.out.println(sinList);
 
         System.out.println("-----------Deleting Node by Pos------------");
-        sinList.deleteByPosition(6);
+        sinList.deleteByPosition(3);
         System.out.println(sinList);
         System.out.println(".......................................");
 
@@ -29,6 +29,9 @@ public class Main {
         System.out.println(".......................................");
         DoublyLinkedList doubList = new DoublyLinkedList();
         doubList.addElement(12);
+        doubList.addElement(22);
+        doubList.addElement(32);
+        doubList.printList();
         System.out.println(".......................................");
 
     }

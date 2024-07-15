@@ -25,8 +25,9 @@ public class DoublyLinkedList {
                 currentNode = currentNode.next;
             }
             Node newNode = new Node(data);
-            newNode.prev = currentNode;
             currentNode.next = newNode;
+            newNode.prev = currentNode;
+
         }
     }
 
