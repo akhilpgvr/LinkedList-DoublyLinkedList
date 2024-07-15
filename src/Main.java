@@ -33,6 +33,9 @@ public class Main {
         doubList.addElement(32);
         doubList.printList();
         System.out.println(".......................................");
+        doubList.deleteElement(22);
+        doubList.printList();
+        System.out.println(".......................................");
 
         /*
 
@@ -40,6 +43,9 @@ public class Main {
         .......................................
         12
         22
+        32
+        .......................................
+        12
         32
         .......................................
          */

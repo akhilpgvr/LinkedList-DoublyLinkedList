@@ -31,6 +31,29 @@ public class DoublyLinkedList {
         }
     }
 
+    public void deleteElement(int data) {
+
+        if(head.data == data) {
+            head = head.next;
+            System.out.println("Deleted Element");
+        }
+        Node currentNode = head;
+        Node previousNode = head;
+        while(currentNode!=null) {
+            if(currentNode.data == data) {
+                Node nextNode = currentNode.next;
+                previousNode.next = currentNode.next;
+                nextNode.prev = previousNode;
+                return;
+            }
+            else {
+                previousNode = currentNode;
+                currentNode = currentNode.next;
+            }
+        }
+
+    }
+
     public void printList() throws Exception {
 
         Node currentNode = head;
