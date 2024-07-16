@@ -1,6 +1,7 @@
 public class DoublyLinkedList {
 
     Node head;
+    Node tail;
 
     class Node {
         int data;
@@ -18,7 +19,7 @@ public class DoublyLinkedList {
 
         Node currentNode = head;
         if(head == null){
-            head = new Node(data);
+            head = tail = new Node(data);
         }
         else{
             while(currentNode.next != null) {
@@ -27,6 +28,7 @@ public class DoublyLinkedList {
             Node newNode = new Node(data);
             currentNode.next = newNode;
             newNode.prev = currentNode;
+            tail = newNode;
 
         }
     }
@@ -35,6 +37,7 @@ public class DoublyLinkedList {
 
         if(head.data == data) {
             head = head.next;
+            if(head == null) tail =null;
             System.out.println("Deleted Element");
         }
         Node currentNode = head;
@@ -43,7 +46,8 @@ public class DoublyLinkedList {
             if(currentNode.data == data) {
                 Node nextNode = currentNode.next;
                 previousNode.next = currentNode.next;
-                nextNode.prev = previousNode;
+                if(nextNode == null) tail=nextNode;
+                else nextNode.prev = previousNode;
                 return;
             }
             else {
